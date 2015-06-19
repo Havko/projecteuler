@@ -1,18 +1,22 @@
-def fib(num)
+def fib()
 	prev = 1
 	newnum = 1
 	sum = 0
-	(0..num).each do |i|
+	limit = 4000000
+	
+	(0..4000000).each do |i|
 
 	    if (prev%2 == 0)
-	    puts prev
+
 		  sum += prev
 		end
 		current = newnum
 		newnum+=prev
 		prev = current
-		 
+		if sum >= limit
+		break 
 	end
+end
 	return sum
 end
 
@@ -32,5 +36,5 @@ def fibtest(num)
 	end
 end
 
-fibtest(100)
+puts fib()
 
