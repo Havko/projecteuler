@@ -1,13 +1,23 @@
-def palindrome
-	range  = (10000..998001).to_a
-	range.each do |i|
-		forwards = i.to_s.split.to_a
-		backwards = forwards.reverse_each{|x| print x, " "}
-			if forwards == backwards
-				puts forwards
+def palindrome(number)
+		forwards = number.to_s
+			if forwards == forwards.reverse
+				return true
 			end
 	
-		end
+	
 	end
 
-palindrome
+
+three_digit = (100..999).to_a
+array = []
+three_digit.each do |i|
+	three_digit.each do |x|
+		answer = (i * x)
+		
+		if palindrome(answer)
+			array << answer
+			end		
+	end
+end
+array.sort!
+puts array[-1]
